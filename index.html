@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iklil's website</title>
+
+  <style>
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-image: url('background.jpg'); 
+      background-size: cover; 
+      background-attachment: fixed; 
+      background-position: center; 
+      background-color: #465c66; 
+      color: #ffffff;            
+      margin: 0;
+      
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3 {
+      color: #ecf3f6; 
+    }
+
+    p {
+      color: #ffffff; 
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    
+    header {
+      background-color: #0d1c30; 
+      padding: 0; 
+      text-align: center;
+      position: relative; 
+      overflow: hidden;
+      border-bottom: 1px solid rgba(236, 243, 246, 0.1);
+    }
+
+    
+    .header-banner-img {
+      width: auto;             
+      max-width: 100%;         
+      height: 200px;           
+      display: block;          
+      margin: 0 auto;                
+      object-fit: contain;        
+   }
+
+    /* Universal Toggle Button Styling */
+    .toggle-btn {
+      background-color: rgba(13, 28, 48, 0.85); 
+      color: #ecf3f6;
+      border: 1px solid #ecf3f6;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); 
+      transition: all 0.2s;
+      z-index: 10;
+    }
+
+    .toggle-btn:hover {
+      background-color: #ecf3f6;
+      color: #0d1c30;
+    }
+
+    #menuButton {
+      left: 20px;
+    }
+
+    #contentButton {
+      right: 20px;
+    }
+
+
+    section {
+      display: flex;
+      flex: 1; 
+      width: 100%;
+    }
+
+    nav {
+      width: 20%;
+      background: rgba(13, 28, 48, 0.95); /* Deep Blue */
+      padding: 15px;
+      min-height: 400px;
+      transition: opacity 0.2s ease;
+    }
+
+    nav h3 {
+      margin-top: 5px;
+      border-bottom: 1px solid rgba(236, 243, 246, 0.2);
+      padding-bottom: 5px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin-bottom: 15px;
+    }
+
+    nav a {
+      color: #ecf3f6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    
+    article {
+      width: 80%;
+      padding: 30px;
+      background-color: rgba(70, 92, 102, 0.85);
+      transition: opacity 0.2s ease;
+    }
+
+
+    nav.menu-hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    article.content-hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    /* Bottom Footer Section */
+    footer {
+      background-color: #0d1c30; /* Deep blue */
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      border-top: 1px solid rgba(236, 243, 246, 0.1);
+    }
+
+    /* Responsive adjustments for phone viewports */
+    @media (max-width: 768px) {
+      section {
+        flex-direction: column;
+      }
+      nav, article {
+        width: 100%;
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-banner-img {
+        height: 140px; /* Nicely scales down banner asset for smartphone viewports */
+      }
+      .toggle-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+      }
+      #menuButton {
+        left: 10px;
+      }
+      #contentButton {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="toggle-btn" onclick="toggleNavbar()" id="menuButton">✕ Hide Menu</button>
+    <img src="human.jpg" alt="Home Page Banner" class="header-banner-img">
+    <button class="toggle-btn" onclick="toggleContent()" id="contentButton">✕ Hide Content</button>
+  </header>
+
+  <section>
+    
+    <nav id="sidebarMenu">
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About_me.html">About Me</a></li>
+        <li><a href="music.html">My music taste</a></li>
+        <li><a href="family.html">My Family</a></li>
+        <li><a href="friends.html">My friends</a></li>
+        <li><a href="series.html">My Favs series</a></li>
+        <li><a href="diploma's life.html">My Diploma's lifes</a></li>
+      </ul>
+    </nav>
+    
+    <article id="mainArticle">
+      <p>My full name is Syarifah Iklil Adlina Binti Syed Khairil Imran</p>
+      <p>If you were to ask me, what do I call you?</p>
+      <p>I'll say, Iklilって呼んで！</p>
+      <br>
+      <p>In this website there will be a little peak of me and also, the people that are related to me, like my family and friends.</p>
+      <p>Just go to the menu bar and you'll see the options of what you want to know or see.</p>
+    </article>
+
+  </section>
+
+  <footer>
+    <p>© 2026 Iklil's Website</p>
+  </footer>
+
+  <script>
+    function toggleNavbar() {
+      const nav = document.getElementById('sidebarMenu');
+      const btn = document.getElementById('menuButton');
+      
+      nav.classList.toggle('menu-hidden');
+      
+      if (nav.classList.contains('menu-hidden')) {
+        btn.innerHTML = "☰ Show Menu";
+      } else {
+        btn.innerHTML = "✕ Hide Menu";
+      }
+    }
+
+    function toggleContent() {
+      const article = document.getElementById('mainArticle');
+      const btn = document.getElementById('contentButton');
+      
+      article.classList.toggle('content-hidden');
+      
+      if (article.classList.contains('content-hidden')) {
+        btn.innerHTML = "👁 Show Content";
+      } else {
+        btn.innerHTML = "✕ Hide Content";
+      }
+    }
+  </script>
+
+</body>
+</html>
