@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Music Taste - Iklil's Website</title>
+
+  <style>
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-image: url('background.jpg'); 
+      background-size: cover; 
+      background-attachment: fixed; 
+      background-position: center; 
+      background-color: #465c66; 
+      color: #ffffff;            
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3 {
+      color: #ecf3f6; 
+    }
+
+    p {
+      color: #ffffff; 
+    }
+
+
+    header {
+      background-color: #0d1c30; 
+      padding: 0; 
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    
+    .header-banner-img {
+      width: auto;
+      max-width: 100%;
+      height: 200px;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+
+    .toggle-btn {
+      background-color: rgba(13, 28, 48, 0.85); 
+      color: #ecf3f6;
+      border: 1px solid #ecf3f6;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); 
+      left: 20px; 
+      transition: all 0.2s;
+      z-index: 10; 
+    }
+
+    .toggle-btn:hover {
+      background-color: #ecf3f6;
+      color: #0d1c30;
+    }
+
+    section {
+      display: flex;
+      flex: 1;
+      width: 100%;
+    }
+
+    
+    nav {
+      width: 20%;
+      background: rgba(13, 28, 48, 0.95); 
+      padding: 15px;
+      min-height: 400px;   
+      transition: all 0.3s ease;
+    }
+
+    nav h3 {
+      margin-top: 5px;
+      border-bottom: 1px solid rgba(236, 243, 246, 0.2);
+      padding-bottom: 5px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin-bottom: 15px;
+    }
+
+    nav a {
+      color: #ecf3f6; 
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    
+    article {
+      width: 80%;
+      padding: 30px;
+      background-color: rgba(70, 92, 102, 0.85); 
+      min-height: 400px;
+      transition: all 0.3s ease;
+    }
+
+   
+    nav.menu-hidden {
+      width: 0%;
+      padding: 0;
+      overflow: hidden;
+      display: none;
+    }
+
+    nav.menu-hidden + article {
+      width: 100%; 
+    }
+
+    audio {
+      margin-top: 10px;
+      margin-bottom: 25px;
+      width: 100%;
+      max-width: 400px; 
+      display: block;
+    }
+
+    footer {
+      background-color: #0d1c30; 
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      border-top: 1px solid rgba(236, 243, 246, 0.1);
+      margin-top: auto; 
+    }
+
+    @media (max-width: 600px) {
+      .header-banner-img {
+        height: 140px;
+      }
+      .toggle-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="toggle-btn" onclick="toggleNavbar()" id="menuButton">✕ Hide Menu</button>
+    <img src="music banner.jpg" alt="My Music Taste Banner" class="header-banner-img">
+  </header>
+
+  <section>
+    <nav id="sidebarMenu">
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About_me.html">About Me</a></li>
+        <li><a href="music.html">My music taste</a></li>
+        <li><a href="family.html">My Family</a></li>
+        <li><a href="friends.html">My friends</a></li>
+        <li><a href="series.html">My Favs series</a></li>
+        <li><a href="diploma's life.html">My Diploma's lifes</a></li>
+      </ul>
+    </nav>
+    
+    <article id="mainArticle">
+      <h3>My Favorite Tracks</h3>
+      <p>Here is a little taste of the kind of music I listen to:</p>
+      
+      <p><strong>Come - Namie Amuro</strong></p>
+      <audio controls>
+        <source src="come.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <p><strong>Haru - Yorushika</strong></p>
+      <audio controls>
+        <source src="haru.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <p><strong>Hana ni natte - Ryokuoushoku shakai </strong></p>
+      <audio controls>
+        <source src="hana.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <p><strong>Hyururirapappa - Tuki</strong></p>
+      <audio controls>
+        <source src="hyururirapappa.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </article> 
+  </section>
+
+  <footer>
+    <p>© 2026 Iklil's Website</p>
+  </footer>
+
+  <script>
+    function toggleNavbar() {
+      const nav = document.getElementById('sidebarMenu');
+      const btn = document.getElementById('menuButton');
+      nav.classList.toggle('menu-hidden');
+      if (nav.classList.contains('menu-hidden')) {
+        btn.innerHTML = "☰ Show Menu";
+      } else {
+        btn.innerHTML = "✕ Hide Menu";
+      }
+    }
+  </script>
+
+</body>
+</html>
