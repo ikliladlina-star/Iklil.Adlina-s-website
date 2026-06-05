@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Diploma Journey - Iklil's Website</title>
+
+  <style>
+    /* 1. GLOBAL STYLES */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      
+      /* 🌟 BACKGROUND PICTURE PROPERTIES 🌟 */
+      background-image: url('background.jpg'); 
+      background-size: cover; 
+      background-attachment: fixed; 
+      background-position: center; 
+      background-color: #465c66; /* Fallback color if image loads slowly */
+      
+      color: #ffffff;            
+      margin: 0;
+    }
+
+    h1, h2, h3 {
+      color: #ecf3f6; 
+    }
+
+    p {
+      color: #ffffff; 
+    }
+
+
+    header {
+      background-color: #0d1c30; 
+      padding: 0; 
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    
+    .header-banner-img {
+      width: auto;             
+      max-width: 100%;         
+      height: 200px;           
+      display: block;         
+      margin: 0 auto;          
+      object-fit: contain;     
+    }
+
+        .menu-toggle-btn {
+      background-color: rgba(13, 28, 48, 0.85); 
+      color: #ecf3f6;
+      border: 1px solid #ecf3f6;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%); 
+      transition: all 0.2s;
+      z-index: 10;
+    }
+
+    .menu-toggle-btn:hover {
+      background-color: #ecf3f6;
+      color: #0d1c30;
+    }
+
+    
+    nav {
+      float: left;
+      width: 20%;
+      background: rgba(13, 28, 48, 0.9); 
+      padding: 15px;
+      min-height: 400px;   
+      transition: all 0.3s ease; 
+    }
+
+    nav h3 {
+      margin-top: 5px;
+      border-bottom: 1px solid rgba(236, 243, 246, 0.2);
+      padding-bottom: 5px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-bottom: 15px;
+    }
+
+    nav a {
+      color: #ecf3f6; 
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    article {
+      float: left;
+      padding: 30px;
+      width: 80%;
+      background-color: rgba(70, 92, 102, 0.85); /* Translucent content backing */
+      min-height: 400px;
+      transition: all 0.3s ease; 
+    }
+
+    /* --- States for when the menu is hidden --- */
+    nav.menu-hidden {
+      width: 0%;
+      padding: 0;
+      overflow: hidden;
+      display: none;
+    }
+
+    nav.menu-hidden + article {
+      width: 100%;
+    }
+
+    /* --- Diploma Gallery Layout (2 Columns per Row) --- */
+    .diploma-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .diploma-card {
+      background-color: rgba(13, 28, 48, 0.85); /* DEEP BLUE (Translucent card back) */
+      border: 1px solid #ecf3f6;
+      border-radius: 6px;
+      padding: 17px;
+      width: calc(50% - 13px); /* Fixed columns setup for dual row layouts */
+      min-width: 290px;
+    }
+
+    /* Styled image layout rules */
+    .diploma-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover; /* Prevents image stretching or distortion */
+      border-radius: 4px;
+      display: block;
+      margin-bottom: 15px;
+      background-color: #526b77; /* Fallback background for missing images */
+    }
+
+    .diploma-card h4 {
+      margin: 5px 0;
+      color: #ecf3f6;
+      font-size: 18px;
+    }
+
+    .diploma-card p {
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 0;
+      color: #d1dfe5;
+    }
+
+    section::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    footer {
+      background-color: #0d1c30; /* DEEP BLUE */
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* Responsive adjustment for small tablet and phone layouts */
+    @media (max-width: 768px) {
+      .diploma-card {
+        width: 100%;
+      }
+    }
+    @media (max-width: 600px) {
+      .header-banner-img {
+        height: 140px; /* Nicely scales down banner asset for smartphone viewports */
+      }
+      .menu-toggle-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="menu-toggle-btn" onclick="toggleNavbar()" id="menuButton">✕ Hide Menu</button>
+ 
+    <img src="diploma banner.jpg" alt="My Diploma Journey Banner" class="header-banner-img">
+  </header>
+
+  <section>
+    
+    <nav id="sidebarMenu">
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About_me.html">About Me</a></li>
+        <li><a href="music.html">My music taste</a></li>
+        <li><a href="family.html">My Family</a></li>
+        <li><a href="friends.html">My friends</a></li>
+        <li><a href="series.html">My Favs series</a></li>
+        <li><a href="diploma's life.html">My Diploma's lifes</a></li>
+      </ul>
+    </nav>
+    
+    <article>
+      <h3>My Academic Journey & Achievements</h3>
+      <p>Take a look through the highlights, projects, campus memories, and milestones of my Diploma studies!</p>
+      
+      <div class="diploma-gallery">
+        
+        <div class="diploma-card">
+          <img src="aquaria.jpg" alt="Diploma Memory 1">
+          <h4>Aquaria outing</h4>
+        </div>
+
+        <div class="diploma-card">
+          <img src="aquaria2.jpg" alt="Diploma Memory 2">
+          <h4>Aquaria outing</h4>
+        </div>
+
+        <div class="diploma-card">
+          <img src="presentation.jpg" alt="Diploma Memory 3">
+          <h4>Group presentation in the class</h4>
+        </div>
+
+        <div class="diploma-card">
+          <img src="06.jpg" alt="Diploma Memory 4">
+          <h4>1, 2, 3, Smile guys</h4>
+        </div>
+
+        <div class="diploma-card">
+          <img src="flight.jpg" alt="Diploma Memory 5">
+          <h4>Going back to Sungai Petani</h4>
+        </div>
+
+        <div class="diploma-card">
+          <img src="madam asma.jpg" alt="Diploma Memory 6">
+          <h4>A picture with Madam Asma</h4>
+        </div>
+
+        <div class="diploma-card">
+          <img src="birthday.jpg" alt="Diploma Memory 7">
+          <h4>My birthday celebration in Uni's</h4>
+          <p>Add a description of your internship experiences or outdoor academic trips.</p>
+        </div>
+
+        <div class="diploma-card">
+          <img src="pantai.jpg" alt="Diploma Memory 8">
+          <h4>At the beach selfie</h4>
+        </div>
+
+        <div class="diploma-card">
+          <img src="gunung jerai.jpg" alt="Diploma Memory 9">
+          <h4>A tour at Gunung Jerai</h4>
+          <p>Add a description about final submissions or your last day of classes on campus.</p>
+        </div>
+
+        <div class="diploma-card">
+          <img src="kl.jpg" alt="Diploma Memory 10">
+          <h4>One of the picture from our KL Tour</h4>
+        </div>
+
+      </div>
+    </article> 
+
+  </section>
+
+  <footer>
+    <p>© 2026 Iklil's Website</p>
+  </footer>
+
+  <script>
+    function toggleNavbar() {
+      const nav = document.getElementById('sidebarMenu');
+      const btn = document.getElementById('menuButton');
+      
+      nav.classList.toggle('menu-hidden');
+      
+      if (nav.classList.contains('menu-hidden')) {
+        btn.innerHTML = "☰ Show Menu";
+      } else {
+        btn.innerHTML = "✕ Hide Menu";
+      }
+    }
+  </script>
+
+</body>
+</html>
