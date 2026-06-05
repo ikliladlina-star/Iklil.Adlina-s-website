@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Friends - Iklil's Website</title>
+
+  <style>
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      
+      background-image: url('background.jpg'); 
+      background-size: cover; 
+      background-attachment: fixed; 
+      background-position: center; 
+      background-color: #465c66; 
+      
+      color: #ffffff;            
+      margin: 0;
+    }
+
+    h1, h2, h3 {
+      color: #ecf3f6; 
+    }
+
+    p {
+      color: #ffffff; 
+    }
+
+    
+    header {
+      background-color: #0d1c30; 
+      padding: 0; 
+      text-align: center;
+      position: relative; 
+      overflow: hidden;
+    }
+
+
+    .header-banner-img {
+      width: auto;             
+      max-width: 100%;         
+      height: 200px;          
+      display: block;          
+      margin: 0 auto;          
+      object-fit: contain;     
+    }
+
+    
+    .menu-toggle-btn {
+      background-color: rgba(13, 28, 48, 0.85); 
+      color: #ecf3f6;
+      border: 1px solid #ecf3f6;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%); 
+      transition: all 0.2s;
+      z-index: 10;
+    }
+
+    .menu-toggle-btn:hover {
+      background-color: #ecf3f6;
+      color: #0d1c30;
+    }
+
+   
+    nav {
+      float: left;
+      width: 20%;
+      background: rgba(13, 28, 48, 0.95);
+      padding: 15px;
+      min-height: 400px;   
+      transition: all 0.3s ease; 
+    }
+
+    nav h3 {
+      margin-top: 5px;
+      border-bottom: 1px solid rgba(236, 243, 246, 0.2);
+      padding-bottom: 5px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-bottom: 15px;
+    }
+
+    nav a {
+      color: #ecf3f6; 
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    article {
+      float: left;
+      padding: 30px;
+      width: 80%;
+      background-color: rgba(70, 92, 102, 0.85); 
+      min-height: 400px;
+      transition: all 0.3s ease; 
+    }
+
+ 
+    nav.menu-hidden {
+      width: 0%;
+      padding: 0;
+      overflow: hidden;
+      display: none;
+    }
+
+    nav.menu-hidden + article {
+      width: 100%;
+    }
+
+    .friends-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .friend-card {
+      background-color: rgba(13, 28, 48, 0.85); 
+      border: 1px solid #ecf3f6;
+      border-radius: 6px;
+      padding: 12px;
+      width: calc(33.333% - 14px); 
+      min-width: 230px;
+      text-align: left; 
+    }
+
+
+    .friend-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      margin-bottom: 10px;
+      background-color: #526b77; 
+    }
+
+    .friend-card h4 {
+      margin: 8px 0 4px 0;
+      color: #ecf3f6;
+      font-size: 16px;
+    }
+
+    .friend-card p {
+      font-size: 13px;
+      margin: 0;
+      color: #d1dfe5;
+      line-height: 1.4;
+    }
+
+    section::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    footer {
+      background-color: #0d1c30;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .friend-card { width: calc(50% - 10px); }
+    }
+    @media (max-width: 600px) {
+      .header-banner-img {
+        height: 140px; 
+      }
+      .friend-card { width: 100%; }
+      .menu-toggle-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="menu-toggle-btn" onclick="toggleNavbar()" id="menuButton">✕ Hide Menu</button>
+   
+    <img src="friend banner.jpg" alt="My Friends Banner" class="header-banner-img">
+  </header>
+
+  <section>
+    
+    <nav id="sidebarMenu">
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About_me.html">About Me</a></li>
+        <li><a href="music.html">My music taste</a></li>
+        <li><a href="family.html">My Family</a></li>
+        <li><a href="friends.html">My friends</a></li>
+        <li><a href="series.html">My Favs series</a></li>
+        <li><a href="diploma.html">My Diploma's lifes</a></li>
+      </ul>
+    </nav>
+    
+    <article>
+      <h3>Meet My Friends</h3>
+      <p>This is the people who is still here, even though they have seen my flaws. Meeting them, is one of the greatest blessing in my life.</p>
+      
+      <div class="friends-gallery">
+        
+        <div class="friend-card">
+          <img src="farah.jpg" alt="Friend 1">
+          <h4>Mayo</h4>
+          <p>Her actual name is Nur Farah Izni. She is the friend tha always help her friends in need even if they didn't ask for it. She always reach me first in everyway i never expected. She also comfort me when im down.</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="fariha.jpg" alt="Friend 2">
+          <h4>Watanabe</h4>
+          <p>Her actual name is Fariha Mashitah. She is funny one of the people who always make me laugh. She always tryna help me in every way possibl.</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="arni.jpg" alt="Friend 3">
+          <h4>Arni</h4>
+          <p>Her actual name is Arni Karmila. She is the friend who always remind me whenever i do something wrong or overbroad with my jokes, and for that im so thankfull to her.</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="hani.jpg" alt="Friend 4">
+          <h4>Hani</h4>
+          <p>Her actual name is NurHanisah. She was also the friend who was always there, when i needed and always give me courage.</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="hanan.jpg" alt="Friend 5">
+          <h4>Hanan</h4>
+          <p>Her actual name is Azuhaizat. She is a baddie and a cutie patootie who will fight with her friends bullies. She have also help me a lots in every way, and for that i am so gratefull.</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="waniek.jpg" alt="Friend 6">
+          <h4>Wani</h4>
+          <p>Her actual name is Syafiqah Nurhazwani Nazirah. She is the friend that loves to take a picture. If you want to have a beautiful picture during your wedding, i think you can trust her.She is so very kind to me, always helps me with my diploma's life. Always answers my questions and catch my ridiculous jokes. Being her friend is such a blessing.</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="friend7.jpg" alt="Friend 7">
+          <h4>Friend 07</h4>
+          <p>Add a fun caption or name.</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="intan.jpg" alt="Friend 8">
+          <h4>Intan Batrisyia</h4>
+          <p>Her actual name is Intan Batrisyia. She is so smart and always lent me her things. She is always there whenever i wanted</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="zureen.jpg" alt="Friend 9">
+          <h4>Zureen</h4>
+          <p>Her actual name is Nur Nazureen. She was also one of the friend that always help me and she always listen to my stories no matter how ridiculous the story is. For that i am so gratefull.</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="adawiyah.jpg" alt="Friend 10">
+          <h4>Ad</h4>
+          <p>Her actual name is Rabiatul Adawiyah. She is so very kind to me. Never expect i meet a friend like her. She was one of the friend that always there when i need, always comfort me when im down and always try to help me whenever i needed.</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="ipah.jpg" alt="Friend 11">
+          <h4>Ipah</h4>
+          <p>Her actual name is Nur Hayatul Iffah. She have always helped me when i am lost and needed life advice. Spending time with her is so fun im telling you, being her friend make me more matured</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="hani qistina.jpg" alt="Friend 12">
+          <h4>Hani</h4>
+          <p>Her actual name is Nur Hani Qistina. She is my highschool friend. She is always there to remind me whenever i overstep on something. She always comfort me when i am down. She have always laugh at my jokes. Not to forget she have a very great voice</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="hawa.jpg" alt="Friend 13">
+          <h4>Hawa</h4>
+          <p>Her actual name is Hawa Najieha. She was also my highschool friend who is always there whenever i needed. She is so silly and funny spending time with her is fun especially when you got t see her silly act that makes you burst to laughter.</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="nana.jpg" alt="Friend 14">
+          <h4>Nana</h4>
+          <p>Her actual name is Adriana Najwa. She is so pretty and so matured at the same time. She is the friend that always available for a hangout, she was also my highschool friend.</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="ain.jpg" alt="Friend 15">
+          <h4>Ain</h4>
+          <p>Her actual name is Nur Ain Shahida. She is my highschool friend who loves to read. She is so kind to me and her friends. She was one of the people who always comfort me whenever i am down. She always listen to my stories and be with me when i am lonely.</p>
+        </div>
+
+        <div class="friend-card">
+          <img src="qistina.jpg" alt="Friend 16">
+          <h4>Qistina</h4>
+          <p>Her actual name is, Qistina Delylah. She is also one of my kindest friend. She always lent her hand to helps others whenever they needed. She always listen to my stories and she is the girl who is with me during my istiqamah journey.</p>
+        </div>
+
+        
+
+      </div>
+    </article> 
+
+  </section>
+
+  <footer>
+    <p>© 2026 Iklil's Website</p>
+  </footer>
+
+  <script>
+    function toggleNavbar() {
+      const nav = document.getElementById('sidebarMenu');
+      const btn = document.getElementById('menuButton');
+      
+      nav.classList.toggle('menu-hidden');
+      
+      if (nav.classList.contains('menu-hidden')) {
+        btn.innerHTML = "☰ Show Menu";
+      } else {
+        btn.innerHTML = "✕ Hide Menu";
+      }
+    }
+  </script>
+
+</body>
+</html>
