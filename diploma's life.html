@@ -6,7 +6,7 @@
   <title>My Diploma Journey - Iklil's Website</title>
 
   <style>
-    /* 1. GLOBAL STYLES */
+    
     * {
       box-sizing: border-box;
     }
@@ -14,12 +14,11 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       
-      /* 🌟 BACKGROUND PICTURE PROPERTIES 🌟 */
       background-image: url('background.jpg'); 
       background-size: cover; 
       background-attachment: fixed; 
       background-position: center; 
-      background-color: #465c66; /* Fallback color if image loads slowly */
+      background-color: #465c66; 
       
       color: #ffffff;            
       margin: 0;
@@ -113,12 +112,12 @@
       float: left;
       padding: 30px;
       width: 80%;
-      background-color: rgba(70, 92, 102, 0.85); /* Translucent content backing */
+      background-color: rgba(70, 92, 102, 0.85); 
       min-height: 400px;
       transition: all 0.3s ease; 
     }
 
-    /* --- States for when the menu is hidden --- */
+    
     nav.menu-hidden {
       width: 0%;
       padding: 0;
@@ -130,7 +129,6 @@
       width: 100%;
     }
 
-    /* --- Diploma Gallery Layout (2 Columns per Row) --- */
     .diploma-gallery {
       display: flex;
       flex-wrap: wrap;
@@ -139,23 +137,22 @@
     }
 
     .diploma-card {
-      background-color: rgba(13, 28, 48, 0.85); /* DEEP BLUE (Translucent card back) */
+      background-color: rgba(13, 28, 48, 0.85); 
       border: 1px solid #ecf3f6;
       border-radius: 6px;
       padding: 17px;
-      width: calc(50% - 13px); /* Fixed columns setup for dual row layouts */
+      width: calc(50% - 13px); 
       min-width: 290px;
     }
 
-    /* Styled image layout rules */
     .diploma-card img {
       width: 100%;
       height: 240px;
-      object-fit: cover; /* Prevents image stretching or distortion */
+      object-fit: cover; 
       border-radius: 4px;
       display: block;
       margin-bottom: 15px;
-      background-color: #526b77; /* Fallback background for missing images */
+      background-color: #526b77; 
     }
 
     .diploma-card h4 {
@@ -178,13 +175,13 @@
     }
 
     footer {
-      background-color: #0d1c30; /* DEEP BLUE */
+      background-color: #0d1c30; 
       padding: 15px;
       text-align: center;
       font-size: 14px;
     }
 
-    /* Responsive adjustment for small tablet and phone layouts */
+
     @media (max-width: 768px) {
       .diploma-card {
         width: 100%;
@@ -192,7 +189,7 @@
     }
     @media (max-width: 600px) {
       .header-banner-img {
-        height: 140px; /* Nicely scales down banner asset for smartphone viewports */
+        height: 140px; 
       }
       .menu-toggle-btn {
         padding: 6px 12px;
@@ -225,8 +222,7 @@
     </nav>
     
     <article>
-      <h3>My Academic Journey & Achievements</h3>
-      <p>Take a look through the highlights, projects, campus memories, and milestones of my Diploma studies!</p>
+      <h3>Lets take a peek of my diploma's life</h3>
       
       <div class="diploma-gallery">
         
